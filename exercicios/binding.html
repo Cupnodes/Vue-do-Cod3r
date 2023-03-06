@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Binding</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+    <div id="app">
+        <p>{{link}}</p>
+        <p><a v-bind:href="link">Canal</a></p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                link: 'https://www.youtube.com/channel/UCcMcmtNSSQECjKsJA1XH5MQ'
+            }
+        })
+    </script>
+</body>
+</html>

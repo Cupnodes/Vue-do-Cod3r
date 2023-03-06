@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+
+    <div id="app">
+        <p>{{contador}}</p>
+        <p>
+            <button v-on:click="add">Somar +1</button>
+            <button @click="sub">Subtrair +1</button>
+        </p>
+        <p @mousemove="updatePosition">
+            Coordenadas: {{x}} e {{y}}
+        </p>
+        <input type="text" @keyup.enter="alerta">
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                contador: 0,
+                x:0,
+                y:0
+            },
+            methods: {
+                add() {
+                    this.contador++
+                },
+
+                sub(){
+                    this.contador -= 1
+                },
+
+                updatePosition(e){
+                    this.x = e.screenX
+                    this.y = e.screenY
+                },
+                alerta(){
+                    alert("chega")
+                }
+            }
+        })
+    </script>
+</body>
+</html>
